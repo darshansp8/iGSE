@@ -5,7 +5,16 @@
     /* background-color: #D55B75;   */
     /* background-color: #35699b ; */
     /* background-image: linear-gradient(to right bottom, #d35656, #35699b); */
-    height: min-max(80vh);
+    min-height: 80vh;
+}
+
+.register-body{
+    min-height: 80vh;
+}
+
+.bg-custom{
+    background-color: #CA3354;
+    background-image: linear-gradient(to right bottom, #d35656, #CA3354, #35699b);
 }
 
 .btn-primary__color{
