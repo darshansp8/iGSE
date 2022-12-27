@@ -1,0 +1,16 @@
+.register{
+    width: 100%;
+    /* background-color:#e6e4e4; */
+    /* color: #fefefe; */
+    /* background-color: #D55B75;   */
+    /* background-color: #35699b ; */
+    /* background-image: linear-gradient(to right bottom, #d35656, #35699b); */
+    height: min-max(80vh);
+}
+
+.btn-primary__color{
+    background-color: #CA3354;
+    background-color:#B1CBE4;
+    color: #fefefe;
+    /* box-shadow: 1px 4px 7px #252525 */
+}
