@@ -13,6 +13,7 @@ import { AdminStatisticsComponent } from './Admin/admin-statistics/admin-statist
 import { AdminSetPriceComponent } from './Admin/admin-set-price/admin-set-price.component';
 import { LoginComponent } from './Authentication/login/login.component';
 import { RegisterComponent } from './Authentication/register/register.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { RegisterComponent } from './Authentication/register/register.component'
     AdminSetPriceComponent,
     LoginComponent,
     RegisterComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
