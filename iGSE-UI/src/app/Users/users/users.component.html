@@ -1,167 +1,199 @@
-<div class="container-fluid">
-    <div class="row">
-        <!-- <div class="col-12">
 
-        </div> -->
-        <div class="col-2 min-vh-100 bg-dark d-none d-lg-block position-relative">
-            <div class="row">
-                <a 
-                    class="h4 text-light text-decoration-none mt-5"
-                    routerLink="/">
-                    iGSE | <span class="lead">Energy</span>
-                </a>
-                <ul class="list-group list-group-flush mt-3">
-                    <li class="list-group-item bg-dark text-light"><a>Dashboard</a></li>
-                    <li class="list-group-item bg-dark text-light"><a>View & Pay Bills</a></li>
-                    <li class="list-group-item bg-dark text-light"><a>Submit Reading</a></li>
-                    <li class="list-group-item bg-dark text-light"><a>Top-up</a></li>
-                    <li class="list-group-item bg-dark text-light"><a>Logout</a></li>
+<h1 class="">Welcome, Darshan!</h1>
+<h6>Your outstanding bill is &#163;100.00</h6>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-md-4 g-lg-4 py-5">
+    <div class="col">
+        <div class="card bg-red text-light">
+            <div class="card-body mt-1">
+                <h5 class="card-title mb-4 text-center">Tariff Rates</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34</li>
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </li>
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Gas per kWh:</span> &#163;0.1</li>
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Standing charge per day:</span> &#163;0.74</li>
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Paid On:</span> 20/12/2022</li>
                 </ul>
+                <!-- <p class="card-text mb-1"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34 </p>
+                <p class="card-text mb-1"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </p>
+                <p class="card-text mb-1"><span class="fw-light">Gas per kWh:</span> &#163;0.1</p>
+                <p class="card-text mb-1"><span class="fw-light">Standing charge per day:</span> &#163;0.74</p>
+                <p class="card-text mb-1"><span class="fw-light">Paid On:</span> 20/12/2022</p> -->
             </div>
-            <a 
-                routerLink="/" 
-                class="text-light text-decoration-none position-absolute bottom-0 start-0 p-3">
-                Logout
-            </a>
-            
-            <!-- <p class="text-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus eveniet magni quam animi quia suscipit. Libero vel ipsam, hic suscipit quidem culpa odit quas adipisci consequatur debitis maiores vero nam!</p> -->
         </div>
-        <div class="col-12 col-lg-10 bg-light px-3 px-md-5 px-lg-5 py-5">
-            <h1 class="">Welcome, Darshan!</h1>
-            <h6>Your outstanding bill is &#163;100.00</h6>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-md-4 g-lg-4 py-5">
-                <div class="col">
-                    <div class="card bg-red text-light">
-                        <div class="card-body mt-1">
-                            <h5 class="card-title mb-4 text-center">Tariff Rates</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34</li>
-                                <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </li>
-                                <li class="list-group-item bg-red text-light"><span class="fw-light">Gas per kWh:</span> &#163;0.1</li>
-                                <li class="list-group-item bg-red text-light"><span class="fw-light">Standing charge per day:</span> &#163;0.74</li>
-                                <li class="list-group-item bg-red text-light"><span class="fw-light">Paid On:</span> 20/12/2022</li>
-                            </ul>
-                            <!-- <p class="card-text mb-1"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34 </p>
-                            <p class="card-text mb-1"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </p>
-                            <p class="card-text mb-1"><span class="fw-light">Gas per kWh:</span> &#163;0.1</p>
-                            <p class="card-text mb-1"><span class="fw-light">Standing charge per day:</span> &#163;0.74</p>
-                            <p class="card-text mb-1"><span class="fw-light">Paid On:</span> 20/12/2022</p> -->
-                        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-blue text-light">
+            <div class="card-body mt-1">
+                <h5 class="card-title mb-4 text-center">Latest Paid Bill</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-blue text-light"><span class="fw-light">Electricity Usage(Day):</span> 100kWh</li>
+                    <li class="list-group-item bg-blue text-light"><span class="fw-light">Electricity Usage(Night):</span> 250kWh</li>
+                    <li class="list-group-item bg-blue text-light"><span class="fw-light">Gas Usage:</span> 800kWh</li>
+                    <li class="list-group-item bg-blue text-light"><span class="fw-light">Paid Amount:</span> &#163;100.00</li>
+                    <li class="list-group-item bg-blue text-light"><span class="fw-light">Paid On:</span> 20/12/2022</li>
+                </ul>
+                <!-- <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </p>
+                <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </p>
+                <p class="card-text mb-1"><span class="fw-light">Gas Usage:</span> 800kWh</p>
+                <p class="card-text mb-1"><span class="fw-light">Paid Amount:</span> &#163;100.00</p>
+                <p class="card-text mb-1"><span class="fw-light">Paid On:</span> 20/12/2022</p> -->
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-red-1 text-light">
+            <div class="card-body mt-1">
+                <h5 class="card-title mb-4 text-center">Latest Unpaid Bill</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </li>
+                    <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </li>
+                    <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Gas Usage:</span> 800kWh</li>
+                    <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Due Amount:</span> &#163;100.00</li>
+                    <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Due Date:</span> 20/01/2023</li>
+                </ul>
+                <!-- <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </p>
+                <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </p>
+                <p class="card-text mb-1"><span class="fw-light">Gas Usage:</span> 800kWh</p>
+                <p class="card-text mb-1"><span class="fw-light">Due Amount:</span> &#163;100.00</p>
+                <p class="card-text mb-1"><span class="fw-light">Due Date:</span> 20/01/2023</p> -->
+                <!-- <div class="row g-1 mt-3">
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <a href="#" class="btn btn-primary">Pay Bill</a>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-blue text-light">
-                        <div class="card-body mt-1">
-                            <h5 class="card-title mb-4 text-center">Latest Paid Bill</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-blue text-light"><span class="fw-light">Electricity Usage(Day):</span> 100kWh</li>
-                                <li class="list-group-item bg-blue text-light"><span class="fw-light">Electricity Usage(Night):</span> 250kWh</li>
-                                <li class="list-group-item bg-blue text-light"><span class="fw-light">Gas Usage:</span> 800kWh</li>
-                                <li class="list-group-item bg-blue text-light"><span class="fw-light">Paid Amount:</span> &#163;100.00</li>
-                                <li class="list-group-item bg-blue text-light"><span class="fw-light">Paid On:</span> 20/12/2022</li>
-                            </ul>
-                            <!-- <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </p>
-                            <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </p>
-                            <p class="card-text mb-1"><span class="fw-light">Gas Usage:</span> 800kWh</p>
-                            <p class="card-text mb-1"><span class="fw-light">Paid Amount:</span> &#163;100.00</p>
-                            <p class="card-text mb-1"><span class="fw-light">Paid On:</span> 20/12/2022</p> -->
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a href="#" class="btn btn-primary">view Bill</a>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-red-1 text-light">
-                        <div class="card-body mt-1">
-                            <h5 class="card-title mb-4 text-center">Latest Unpaid Bill</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </li>
-                                <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </li>
-                                <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Gas Usage:</span> 800kWh</li>
-                                <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Due Amount:</span> &#163;100.00</li>
-                                <li class="list-group-item bg-red-1 text-light"><span class="fw-light">Due Date:</span> 20/01/2023</li>
-                            </ul>
-                            <!-- <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Day):</span> 100kWh </p>
-                            <p class="card-text mb-1"><span class="fw-light">Electricity Usage(Night):</span> 250kWh </p>
-                            <p class="card-text mb-1"><span class="fw-light">Gas Usage:</span> 800kWh</p>
-                            <p class="card-text mb-1"><span class="fw-light">Due Amount:</span> &#163;100.00</p>
-                            <p class="card-text mb-1"><span class="fw-light">Due Date:</span> 20/01/2023</p> -->
-                            <!-- <div class="row g-1 mt-3">
-                                <div class="col-12 col-md-12 col-lg-4">
-                                    <a href="#" class="btn btn-primary">Pay Bill</a>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <a href="#" class="btn btn-primary">view Bill</a>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="card-body d-flex align-self-center pt-0">
-                            <a href="#" class="text-decoration-none text-light p-2">Pay Bill</a>
-                            <a href="#" class="text-decoration-none text-light p-2">View Bill</a>
-                        </div>
+                </div> -->
+            </div>
+            <div class="card-body d-flex align-self-center pt-0">
+                <a href="#" class="text-decoration-none text-light p-2">Pay Bill</a>
+                <a href="#" class="text-decoration-none text-light p-2">View Bill</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-blue text-light">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4">Submit Meter Reading</h5>
+                <p class="card-text text-center">Upload your current month meter reading from the below link.</p>
+            </div>
+            <div class="card-body d-flex align-self-center pt-0">
+                <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#submitReadingModal">Submit Reading</button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="submitReadingModal" tabindex="-1" aria-labelledby="submitReadingModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="submitReadingModalLabel">Meter Reading</h5>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-blue text-light">
-                        <div class="card-body">
-                            <h5 class="card-title text-center mb-4">Submit Meter Reading</h5>
-                            <p class="card-text text-center">Upload your current month meter reading from the below link.</p>
-                        </div>
-                        <div class="card-body d-flex align-self-center pt-0">
-                            <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#submitReadingModal">Submit Reading</button>
-                        </div>
-                    </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="submitReadingModal" tabindex="-1" aria-labelledby="submitReadingModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="submitReadingModalLabel">Meter Reading</h5>
-                                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="#" class="row g-2">
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="date" class="form-control" name="Submission Date" id="floatingDate" placeholder="dd/mm/yyyy">
-                                                <label for="floatingDate">Submission Date</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-floating">
-                                                <input type="number" class="form-control" name="Day Reading" id="floatingDayReading" placeholder="Electricity (Day)">
-                                                <label for="floatingDayReading">Electricity(Day)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-floating">
-                                                <input type="number" class="form-control" name="Day Reading" id="floatingNightReading" placeholder="Electricity (Night)">
-                                                <label for="floatingNightReading">Electricity(Night)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 mb-2">
-                                            <div class="form-floating">
-                                                <input type="number" class="form-control" name="Day Reading" id="floatingGasReading" placeholder="Gas Reading">
-                                                <label for="floatingGasReading">Gas Reading</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button 
-                                            class="btn btn-dark col-12 col-md-6 col-lg-6"
-                                            routerLink="/user">Submit Reading</button>
-                                        </div>
-                                    </form>
+                    <div class="modal-body">
+                        <form action="#" class="row g-2">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" name="Submission Date" id="floatingDate" placeholder="dd/mm/yyyy">
+                                    <label for="floatingDate">Submission Date</label>
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" name="Day Reading" id="floatingDayReading" placeholder="Electricity (Day)">
+                                    <label for="floatingDayReading">Electricity(Day)</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" name="Day Reading" id="floatingNightReading" placeholder="Electricity (Night)">
+                                    <label for="floatingNightReading">Electricity(Night)</label>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" name="Day Reading" id="floatingGasReading" placeholder="Gas Reading">
+                                    <label for="floatingGasReading">Gas Reading</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button 
+                                class="btn btn-dark col-12 col-md-6 col-lg-6"
+                                routerLink="/user">Submit Reading</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card bg-red text-light">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Top-up Wallet</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-red text-light">
+            <div class="card-body">
+                <h5 class="card-title mb-4 text-center">Top-up Wallet</h5>
+                <p class="card-text text-center">Upload your current month meter reading from the below link.</p>
+            </div>
+            <div class="card-body d-flex align-self-center pt-0">
+                <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#topUpModal">Top-Up</button>
+            </div>
+            <div class="modal fade" id="topUpModal" tabindex="-1" aria-labelledby="topUpModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark" id="topUpModalLabel">Top-Up Wallet</h5>
+                            <button class="btn-close" data-bs-dismiss="modal" aria-label="close" (click)="action.stop()" (click)="toggleCamera()"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="row">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            name="EVC" 
+                                            id="floatingEVC" 
+                                            placeholder="EVC"
+                                            value="{{ (action.data.value)['data'] }}">
+                                        <label for="floatingEVC" class="text-dark">EVC</label>
+                                    </div>
+                                    <!-- <a href="" class="text-decoration-none text-light text-center">Scan a QR Code</a> -->
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-dark text-light" (click)="action.stop()">Top-Up Wallet</button>
+                                </div>
+                                <p class="text-center mt-3 text-dark">OR</p>
+                                <div class="col-12">
+                                    <button 
+                                        type="button" 
+                                        class="btn btn-dark text-light align-self-center"
+                                        (click)="action.start()"
+                                        (click)="toggleCamera()">Scan a QR Code
+                                    </button>
+                                </div>
+                                <div class="col-12" [ngClass]="isShow? 'd-block': 'd-none'">
+                                    <button class="btn" (click)="action.stop()">
+                                        <fa-icon [icon]="faClose" class="text-dark text-end"></fa-icon> Close QR Scanner
+                                    </button> 
+                                    <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div id="cameraModal" 
+            [ngClass]="isShow? 'd-block': 'd-none'"
+            tabindex="-1" aria-labelledby="topUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close" (click)="action.stop()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>

@@ -14,6 +14,10 @@ import { AdminSetPriceComponent } from './Admin/admin-set-price/admin-set-price.
 import { LoginComponent } from './Authentication/login/login.component';
 import { RegisterComponent } from './Authentication/register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -29,11 +33,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AdminSetPriceComponent,
     LoginComponent,
     RegisterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SidebarComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    NgxScannerQrcodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
