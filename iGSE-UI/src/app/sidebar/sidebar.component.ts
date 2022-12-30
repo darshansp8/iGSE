@@ -13,27 +13,27 @@ export class SidebarComponent {
     {
       name: 'Dashboard',
       icon: faHome,
-      url: 'user'
+      url: '/user/user-dashboard'
     },
     {
       name: 'View & Pay Bills',
       icon: faFileInvoice,
-      url: '/dashboard'
+      url: '/user/viewbill'
     },
     {
       name: 'Meter Reading',
       icon: faGaugeSimpleMed,
-      url: '/dashboard'
+      url: '/user/meterreading'
     },
     {
       name: 'Top-Up',
       icon: faWallet,
-      url: '/dashboard'
+      url: '/user/topup'
     },
     {
       name: 'Logout',
       icon: faRemove,
-      url: '/dashboard'
+      url: '/'
     }
   ]
   constructor() {}
@@ -41,4 +41,5 @@ export class SidebarComponent {
   ngOnInit(){
 
   }
+
 }

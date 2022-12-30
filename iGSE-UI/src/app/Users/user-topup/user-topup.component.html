@@ -1,1 +1,48 @@
-<p>user-topup works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 ps-0">
+            <p class="h4 mb-3">Current Balance: &#163;200</p>
+            <h4 class="mb-3">Credit Top-up</h4>
+            <form action="" class="row g-2">
+                <div class="d-flex align-items-center">
+                    <div class="col-6 me-2">
+                        <div class="form-floating">
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                name="EVC" 
+                                id="floatingEVC" 
+                                placeholder="EVC"
+                                value="{{ (action.data.value)['data'] }}">
+                            <label for="floatingEVC" class="text-dark">Enter a valid code</label>
+                        </div>
+                        <!-- <a href="" class="text-decoration-none text-light text-center">Scan a QR Code</a> -->
+                    </div>
+                    <div class="col-6">
+                        <button 
+                            type="button" 
+                            class="btn btn-dark text-light align-self-center"
+                            (click)="action.start()"
+                            (click)="showCamera()">
+                            <fa-icon [icon]="faCamera" class="me-2"></fa-icon>Scan a QR Code
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button 
+                        class="btn btn-dark text-light" 
+                        (click)="action.stop()">
+                        <fa-icon [icon]="faWallet" class="me-2"></fa-icon>Top-Up Wallet
+                </button>
+                </div>
+                <!-- <p class="text-center mt-3 text-dark">OR</p> -->
+            </form>
+            <div class="col-12" [ngClass]="isShow? 'd-block': 'd-none'">
+                <button class="btn" (click)="action.stop()" (click)="hideCamera()">
+                    <fa-icon [icon]="faClose" class="text-dark"></fa-icon> Close QR Scanner
+                </button> 
+                <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+            </div>
+        </div>
+    </div>
+</div>

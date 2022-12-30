@@ -1,6 +1,6 @@
 <div class="row">
     <a 
-        class="h4 text-light text-decoration-none mt-5"
+        class="h4 text-light text-decoration-none mt-5 ps-4"
         routerLink="/">
         iGSE | <span class="lead">Energy</span>
     </a>
@@ -12,17 +12,12 @@
         <li class="list-group-item bg-dark text-light"><a>Submit Reading</a></li>
         <li class="list-group-item bg-dark text-light"><a>Top-up</a></li>
         <li class="list-group-item bg-dark text-light"><a>Logout</a></li> -->
-        <li class="list-group-item bg-dark">
+        <li class="list-group-item bg-dark text-gradient" routerLinkActive="activeLink">
             <a 
-                class="text-decoration-none text-light" 
+                class="text-decoration-none text-light"
                 routerLink="{{ sidebarItem.url }}">
                 <fa-icon [icon]="sidebarItem.icon" class="pe-2"></fa-icon>{{sidebarItem.name}}
             </a>
         </li>
     </ul>
 </div>
-<!-- <a 
-    routerLink="/" 
-    class="text-light text-decoration-none position-absolute bottom-0 start-0 p-3">
-    Logout
-</a> -->

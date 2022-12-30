@@ -18,12 +18,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersDashboardComponent } from './Users/users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
+    UsersDashboardComponent,
     UserMeterReadingComponent,
     UserBillComponent,
     UserTopupComponent,
