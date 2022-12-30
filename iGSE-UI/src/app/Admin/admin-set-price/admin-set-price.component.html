@@ -1,1 +1,38 @@
-<p>admin-set-price works!</p>
+<div class="container mt-5">
+    <h4 class="mb-3 ps-0">Energy Rates</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let rate of rateList">
+            <div class="card">
+                <div class="card-body">
+                    <form action="">
+                        <label for="dayElectricity" class="mb-2">{{ rate.name }}</label>
+                        <input type="number" name="" id="dayElectricity" value="{{ rate.amount }}" class="form-control" [disabled]="disabled">
+                    </form>
+                    <a 
+                        class="btn btn-dark mt-3" 
+                        (click)="toggleInput()">
+                            <fa-icon [icon]="disabled === true? faPenAlt: faCheck" class="me-2"></fa-icon>
+                            <span *ngIf="disabled">Edit</span>
+                            <span *ngIf="!disabled">Done</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Electricity(Night): &#163;0.34</h5>
+                    <a href="#" class="btn btn-dark"><fa-icon [icon]="faPenAlt" class="me-2"></fa-icon>Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gas: &#163;0.34</h5>
+                    <a href="#" class="btn btn-dark"><fa-icon [icon]="faPenAlt" class="me-2"></fa-icon>Edit</a>
+                </div>
+          </div>
+        </div> -->
+    </div>
+</div>

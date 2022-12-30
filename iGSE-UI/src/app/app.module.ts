@@ -7,7 +7,6 @@ import { UsersComponent } from './Users/users/users.component';
 import { UserMeterReadingComponent } from './Users/user-meter-reading/user-meter-reading.component';
 import { UserBillComponent } from './Users/user-bill/user-bill.component';
 import { UserTopupComponent } from './Users/user-topup/user-topup.component';
-import { AdminComponent } from './Admin/admin/admin.component';
 import { AdminMeterReadingComponent } from './Admin/admin-meter-reading/admin-meter-reading.component';
 import { AdminStatisticsComponent } from './Admin/admin-statistics/admin-statistics.component';
 import { AdminSetPriceComponent } from './Admin/admin-set-price/admin-set-price.component';
@@ -19,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersDashboardComponent } from './Users/users.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -29,7 +30,6 @@ import { UsersDashboardComponent } from './Users/users.component';
     UserMeterReadingComponent,
     UserBillComponent,
     UserTopupComponent,
-    AdminComponent,
     AdminMeterReadingComponent,
     AdminStatisticsComponent,
     AdminSetPriceComponent,
@@ -38,6 +38,8 @@ import { UsersDashboardComponent } from './Users/users.component';
     LandingPageComponent,
     SidebarComponent,
     DashboardComponent,
+    AdminDashboardComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

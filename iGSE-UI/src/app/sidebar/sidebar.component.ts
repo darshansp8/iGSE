@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faFileInvoice, faGaugeSimpleMed, faHome, faRemove, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { faChartArea, faFileInvoice, faGaugeSimpleMed, faHome, faPoundSign, faRemove, faWallet } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +7,9 @@ import { faFileInvoice, faGaugeSimpleMed, faHome, faRemove, faWallet } from '@fo
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  faHome = faHome
+  // faHome = faHome
   // faFileInvoice = faFileInvoice
-  sidebarList = [
+  usersidebarList = [
     {
       name: 'Dashboard',
       icon: faHome,
@@ -36,6 +36,36 @@ export class SidebarComponent {
       url: '/'
     }
   ]
+
+  adminSideBarList = [
+    {
+      name: 'Dashboard',
+      icon: faHome,
+      url: '/admin/admin-dashboard'
+    },
+    {
+      name: 'View Meter Reading',
+      icon: faFileInvoice,
+      url: '/admin/meterReading'
+    },
+    {
+      name: 'Set Tariff Rates',
+      icon: faPoundSign,
+      url: '/admin/setPrice'
+    },
+    {
+      name: 'Statistics',
+      icon: faChartArea,
+      url: '/admin/statistics'
+    },
+    {
+      name: 'Logout',
+      icon: faRemove,
+      url: '/'
+    }
+  ]
+
+  role = 'admin';
   constructor() {}
 
   ngOnInit(){
