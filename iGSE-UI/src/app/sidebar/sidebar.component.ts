@@ -65,7 +65,7 @@ export class SidebarComponent {
     }
   ]
 
-  role = 'admin';
+  role = 'user';
   constructor() {}
 
   ngOnInit(){

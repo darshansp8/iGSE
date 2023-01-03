@@ -23,3 +23,11 @@
     color: #fefefe;
     /* box-shadow: 1px 4px 7px #252525 */
 }
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+input.ng-valid.ng-touched{
+    border: 1px solid green;
+}

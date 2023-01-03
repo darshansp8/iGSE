@@ -15,7 +15,11 @@
                     class="brand-color fw-semibold text-light h1 d-block d-sm-block d-md-none mb-3"
                     routerLink="/">iGSE | <span class="lead">Energy</span></a>
                 <h2 class="pb-3 mt-3 align-self-center">Create your account!</h2>
-                <form action="#" class="row g-1 g-sm-2 g-lg-2">
+                <form 
+                    novalidate
+                    class="row g-1 g-sm-2 g-lg-2 needs-validation"
+                    (ngSubmit)="onSubmit()"
+                    [formGroup]="registerForm">
                     <!-- <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-3">
                             <input type="text" name="FirstName" id="floatingFirstName" class="form-control" placeholder="John Doe">
@@ -30,25 +34,73 @@
                     </div> -->
                     <div class="col-12">
                         <div class="form-floating mb-3">
-                            <input type="email" name="Email" id="floatingEmail" class="form-control" placeholder="John Doe">
+                            <input 
+                                type="email" 
+                                formControlName="email" 
+                                id="floatingEmail" 
+                                class="form-control" 
+                                placeholder="johndoe@xyz.com">
                             <label for="floatingEmail">Email</label>
+                            <span 
+                                *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"
+                                class="text-danger">Please provide a valid email.</span>
+                            <span 
+                                *ngIf="registerForm.get('email').valid && registerForm.get('email').touched"
+                                class="text-success">Looks good.</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-3">
-                            <input type="password" name="Password" id="floatingPassword" class="form-control" placeholder="John Doe">
+                            <input 
+                                type="password" 
+                                formControlName="password" 
+                                id="floatingPassword"
+                                class="form-control" 
+                                placeholder="John Doe">
                             <label for="floatingPassword">Password</label>
+                            <span 
+                                *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched"
+                                class="text-danger">
+                                <span *ngIf="registerForm.get('password').errors.required">
+                                    Please provide a valid password.
+                                </span>
+                                <span *ngIf="registerForm.get('password').errors.minlength">
+                                    Password must be at least 8 characters.
+                                </span>
+                                
+                            </span> 
+                            <span 
+                                *ngIf="registerForm.get('password').valid && registerForm.get('password').touched"
+                                class="text-success">Looks good.</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-3">
-                            <input type="password" name="Confirm Password" id="floatingConfirmPassword" class="form-control" placeholder="John Doe">
+                            <input 
+                                type="password" 
+                                formControlName="confirmPassword" 
+                                id="floatingConfirmPassword" 
+                                class="form-control" 
+                                placeholder="John Doe">
                             <label for="floatingConfirmPassword">Confirm Password</label>
+                            <span 
+                                *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched"
+                                class="text-danger">
+                                <span *ngIf="registerForm.get('confirmPassword').errors.required">
+                                    Please provide a valid password.
+                                </span>
+                                <span *ngIf="registerForm.get('confirmPassword').errors.minlength">
+                                    Password must be of 8 characters.
+                                </span>
+                            </span>
+                            <span 
+                                *ngIf="registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched"
+                                class="text-success">Looks good.</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-8 col-lg-8">
                         <div class="form-floating mb-3 mb-md-1 mb-lg-1">
-                            <select name="Property Type" id="floatingSelect" class="form-select">
+                            <select formControlName="propertyType" id="floatingSelect" class="form-select">
                                 <option selected>Select from below property type</option>
                                 <option value="detached">Detached</option>
                                 <option value="semi-detached">Semi-Detached</option>
@@ -59,22 +111,51 @@
                                 <option value="mansion">Mansion</option>
                             </select>
                             <label for="floatingSelect">Property Type</label>
+                            <span 
+                                *ngIf="!registerForm.get('propertyType').valid && registerForm.get('propertyType').touched"
+                                class="text-danger">Please provide a valid password.</span>
+                            <span 
+                                *ngIf="registerForm.get('propertyType').valid && registerForm.get('propertyType').touched"
+                                class="text-success">Looks good.</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">
                         <div class="form-floating mb-1">
-                            <input type="number" name="Number of Bedroom" id="floatingNoBedroom" class="form-control" placeholder="John Doe">
+                            <input 
+                                type="number" 
+                                formControlName="numberOfBedrooms" 
+                                id="floatingNoBedroom" 
+                                class="form-control" 
+                                placeholder="John Doe">
                             <label for="floatingNoBedroom">Number of Bedrooms</label>
+                            <span 
+                                *ngIf="!registerForm.get('numberOfBedrooms').valid && registerForm.get('numberOfBedrooms').touched"
+                                class="text-danger">Please provide a valid bedroom count.</span>
+                            <span 
+                                *ngIf="registerForm.get('numberOfBedrooms').valid && registerForm.get('numberOfBedrooms').touched"
+                                class="text-success">Looks good.</span>
                         </div>
                     </div>
                     <div class="col-12 mb-2">
-                        <input type="checkbox" name="Terms & Conditions" id="terms_condition" class="mr-3">
+                        <input 
+                            type="checkbox" 
+                            formControlName="termsAndConditions" 
+                            id="terms_condition"
+                            class="mr-3">
                         <label for="terms_condition">&nbsp;Accept the terms & conditions</label>
+                        <span 
+                            *ngIf="!registerForm.get('termsAndConditions').valid && registerForm.get('termsAndConditions').touched"
+                            class="text-danger">
+                                Without accepting the terms you cannot register.
+                        </span>
+                        <span 
+                            *ngIf="registerForm.get('termsAndConditions').valid && registerForm.get('termsAndConditions').touched"
+                            class="text-success">Looks good.</span>
                     </div>
                     <div class="col-12 mb-1">
                         <button 
-                        class="btn btn-dark col-12 col-md-6 col-lg-6"
-                        routerLink="/user">Register!</button>
+                            class="btn btn-dark col-12 col-md-6 col-lg-6"
+                            type="submit" [disabled]="!registerForm.valid">Register!</button>
                     </div>
                     <div class="col-12 mb-3">
                         <p>Already have an account?<br><a class="text-decoration-none" routerLink="/login">Login here</a></p>
