@@ -160,3 +160,8 @@ footer{
     background-color: #2d2d2d;
     color: #fefefe;
 }
+
+.custom-border{
+    /* border: 0; */
+    border-radius: .4rem;
+}

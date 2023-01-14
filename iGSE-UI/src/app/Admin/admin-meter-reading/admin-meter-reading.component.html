@@ -6,21 +6,23 @@
                 <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Customer Id / Email</th>
+                      <th scope="col">Customer Id</th>
+                      <th scope="col">Submission Date</th>
                       <th scope="col">Electricity(Day) per kWh</th>
                       <th scope="col">Electricity(Night) per kWh</th>
                       <th scope="col">Gas per kWh</th>
-                      <th scope="col">Amount(&#163;)</th>
+                      <!-- <th scope="col">Amount(&#163;)</th> -->
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let customerBill of customerBillList">
-                        <th scope="row">{{ customerBill.index }}</th>
+                    <tr *ngFor="let customerBill of customerReadingList">
+                        <th scope="row">{{ customerBill.readingId }}</th>
                         <td>{{ customerBill.customerId}}</td>
-                        <td>{{ customerBill.electricityDayReading}}</td>
-                        <td>{{ customerBill.electricityNightReading}}</td>
+                        <td>{{ customerBill.submissionDate}}</td>
+                        <td>{{ customerBill.elecReadingDay}}</td>
+                        <td>{{ customerBill.elecReadingNight}}</td>
                         <td>{{ customerBill.gasReading}}</td>
-                        <td>{{ customerBill.amount}}</td>
+                        
                     </tr>
                   </tbody>
             </table>

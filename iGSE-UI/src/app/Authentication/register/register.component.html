@@ -36,17 +36,17 @@
                         <div class="form-floating mb-3">
                             <input 
                                 type="email" 
-                                formControlName="email" 
+                                formControlName="customer_id" 
                                 id="floatingEmail" 
                                 class="form-control" 
                                 placeholder="johndoe@xyz.com">
                             <label for="floatingEmail">Email</label>
                             <span 
-                                *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"
+                                *ngIf="!registerForm.get('customer_id').valid && registerForm.get('customer_id').touched"
                                 class="text-danger">Please provide a valid email.</span>
-                            <span 
-                                *ngIf="registerForm.get('email').valid && registerForm.get('email').touched"
-                                class="text-success">Looks good.</span>
+                            <!-- <span 
+                                *ngIf="registerForm.get('customer_id').valid && registerForm.get('customer_id').touched"
+                                class="text-success">Looks good.</span> -->
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
@@ -69,39 +69,34 @@
                                 </span>
                                 
                             </span> 
-                            <span 
+                            <!-- <span 
                                 *ngIf="registerForm.get('password').valid && registerForm.get('password').touched"
-                                class="text-success">Looks good.</span>
+                                class="text-success">Looks good.</span> -->
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-3">
                             <input 
-                                type="password" 
-                                formControlName="confirmPassword" 
-                                id="floatingConfirmPassword" 
+                                type="text" 
+                                formControlName="address" 
+                                id="floatingAddress" 
                                 class="form-control" 
-                                placeholder="John Doe">
-                            <label for="floatingConfirmPassword">Confirm Password</label>
+                                placeholder="123 XYZ Street">
+                            <label for="floatingAddress">Address</label>
                             <span 
-                                *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched"
+                                *ngIf="!registerForm.get('address').valid && registerForm.get('address').touched"
                                 class="text-danger">
-                                <span *ngIf="registerForm.get('confirmPassword').errors.required">
-                                    Please provide a valid password.
-                                </span>
-                                <span *ngIf="registerForm.get('confirmPassword').errors.minlength">
-                                    Password must be of 8 characters.
-                                </span>
+                                    Please provide a valid password(Eg. 123 XYZ Street).
                             </span>
-                            <span 
-                                *ngIf="registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched"
-                                class="text-success">Looks good.</span>
+                            <!-- <span 
+                                *ngIf="registerForm.get('address').valid && registerForm.get('address').touched"
+                                class="text-success">Looks good.</span> -->
                         </div>
                     </div>
-                    <div class="col-12 col-md-8 col-lg-8">
+                    <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-3 mb-md-1 mb-lg-1">
                             <select formControlName="propertyType" id="floatingSelect" class="form-select">
-                                <option selected>Select from below property type</option>
+                                <option>Select from below property type</option>
                                 <option value="detached">Detached</option>
                                 <option value="semi-detached">Semi-Detached</option>
                                 <option value="terraced">Terraced</option>
@@ -114,28 +109,78 @@
                             <span 
                                 *ngIf="!registerForm.get('propertyType').valid && registerForm.get('propertyType').touched"
                                 class="text-danger">Please provide a valid password.</span>
-                            <span 
+                            <!-- <span 
                                 *ngIf="registerForm.get('propertyType').valid && registerForm.get('propertyType').touched"
-                                class="text-success">Looks good.</span>
+                                class="text-success">Looks good.</span> -->
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-floating mb-1">
                             <input 
                                 type="number" 
-                                formControlName="numberOfBedrooms" 
+                                formControlName="bedroomNum" 
                                 id="floatingNoBedroom" 
                                 class="form-control" 
                                 placeholder="John Doe">
-                            <label for="floatingNoBedroom">Number of Bedrooms</label>
+                            <label for="floatingNoBedroom">Bedrooms Count</label>
                             <span 
-                                *ngIf="!registerForm.get('numberOfBedrooms').valid && registerForm.get('numberOfBedrooms').touched"
+                                *ngIf="!registerForm.get('bedroomNum').valid && registerForm.get('bedroomNum').touched"
                                 class="text-danger">Please provide a valid bedroom count.</span>
-                            <span 
-                                *ngIf="registerForm.get('numberOfBedrooms').valid && registerForm.get('numberOfBedrooms').touched"
-                                class="text-success">Looks good.</span>
+                            <!-- <span 
+                                *ngIf="registerForm.get('bedroomNum').valid && registerForm.get('bedroomNum').touched"
+                                class="text-success">Looks good.</span> -->
                         </div>
                     </div>
+                    <div class="col-12 col-md-7 col-lg-7">
+                        <div class="form-floating mb-1">
+                            <input 
+                                type="text" 
+                                formControlName="evcCode" 
+                                id="floatingEvcCode" 
+                                class="form-control" 
+                                placeholder="DS34D7DF"
+                                value="{{ (action.data.value)['data'] }}">
+                            <label for="floatingEvcCode">EVC Code</label>
+                            <span 
+                                *ngIf="!registerForm.get('evcCode').valid && registerForm.get('evcCode').touched"
+                                class="text-danger">Please provide a valid EVC code.</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 d-flex align-self-center">
+                        <button 
+                        class="btn btn-dark text-light" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#topUpModal"
+                        (click)="action.start()">
+                            <fa-icon [icon]="faCamera" class="me-2"></fa-icon>Scan QR Code
+                        </button>
+                    </div>
+                    <!-- Modal for camera scanner starts-->
+
+                    <div class="modal fade" id="topUpModal" tabindex="-1" aria-labelledby="topUpModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="topUpModalModalLabel">Scan your voucher</h5>
+                                    <button 
+                                        type="button" 
+                                        class="btn-close" 
+                                        data-bs-dismiss="modal" 
+                                        aria-label="Close"
+                                        (click)="action.stop()"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+                                </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div> -->
+                            </div>
+                        </div>
+                      </div>
+
+                    <!-- Modal for camera ends -->
                     <div class="col-12 mb-2">
                         <input 
                             type="checkbox" 
@@ -148,9 +193,9 @@
                             class="text-danger">
                                 Without accepting the terms you cannot register.
                         </span>
-                        <span 
+                        <!-- <span 
                             *ngIf="registerForm.get('termsAndConditions').valid && registerForm.get('termsAndConditions').touched"
-                            class="text-success">Looks good.</span>
+                            class="text-success">Looks good.</span> -->
                     </div>
                     <div class="col-12 mb-1">
                         <button 

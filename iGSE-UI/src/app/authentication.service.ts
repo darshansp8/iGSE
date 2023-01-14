@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { User } from './Users/user.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthenticationService {
+
+
+  registerUrl = "http://127.0.0.1:5000/auth/signup"
+  getTariffUrl = "http://127.0.0.1:5000/tariff"
+  getMeterReadingUrl = "http://127.0.0.1:5000/readings"
+
+  constructor(private http: HttpClient) { }
+
+  register(user: User){
+    return this.http.post<any>(this.registerUrl, user)
+  }
+
+  getTariff(){
+    return this.http.get<any>(this.getTariffUrl)
+  }
+
+  getReadings(){
+    return this.http.get<any>(this.getMeterReadingUrl)
+  }
+}

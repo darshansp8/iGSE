@@ -5,3 +5,13 @@
     -webkit-text-fill-color: transparent;
     
 }
+
+.background-dark{
+    background-color: #212529;
+}
+
+
+.activeLink{
+    background-color: #343435;
+    /* background-color: red; */
+}

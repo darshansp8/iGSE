@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { MeterReading } from 'src/app/Models/meter-reading.model';
 
 @Component({
   selector: 'app-admin-meter-reading',
   templateUrl: './admin-meter-reading.component.html',
   styleUrls: ['./admin-meter-reading.component.css']
 })
-export class AdminMeterReadingComponent {
+export class AdminMeterReadingComponent implements OnInit{
+
+  customerReading: MeterReading[] = []
+  customerReadingList: MeterReading[] = []
   customerBillList = [
     {
       index: 1,
@@ -32,4 +37,20 @@ export class AdminMeterReadingComponent {
       amount: 154
     }
   ]
+
+
+  constructor(private authenticateService: AuthenticationService){}
+
+  ngOnInit(){
+	this.authenticateService.getReadings()
+		.subscribe(
+			responseData => {
+				console.log(responseData)
+				this.customerReading = Array.from(Object.keys(responseData), k=>responseData[k])
+				this.customerReading.forEach(element => {
+					this.customerReadingList.push(element)
+				});
+			}
+		)
+  }
 }

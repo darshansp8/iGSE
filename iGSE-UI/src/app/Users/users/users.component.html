@@ -3,12 +3,14 @@
         <div class="card bg-red text-light">
             <div class="card-body mt-1">
                 <h5 class="card-title mb-4 text-center">Standard Tariff Rates</h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34</li>
+                <ul 
+                    class="list-group list-group-flush"
+                    *ngFor="let rate of rateList">
+                    <!-- <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34</li>
                     <li class="list-group-item bg-red text-light"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </li>
                     <li class="list-group-item bg-red text-light"><span class="fw-light">Gas per kWh:</span> &#163;0.1</li>
-                    <li class="list-group-item bg-red text-light"><span class="fw-light">Standing charge per day:</span> &#163;0.74</li>
-                    <li class="list-group-item bg-red text-light"><span class="fw-light">Paid On:</span> 20/12/2022</li>
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">Standing charge per day:</span> &#163;0.74</li> -->
+                    <li class="list-group-item bg-red text-light"><span class="fw-light">{{ rate.tariff_type | titlecase }}:</span> &#163;{{ rate.value }}</li>
                 </ul>
                 <!-- <p class="card-text mb-1"><span class="fw-light">Electricity (Day) per kWh:</span> &#163;0.34 </p>
                 <p class="card-text mb-1"><span class="fw-light">Electricity (Night) per kWh:</span> &#163;0.2 </p>

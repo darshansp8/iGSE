@@ -5,8 +5,8 @@
             <div class="card">
                 <div class="card-body">
                     <form action="">
-                        <label for="dayElectricity" class="mb-2">{{ rate.name }}</label>
-                        <input type="number" name="" id="dayElectricity" value="{{ rate.amount }}" class="form-control" [disabled]="disabled">
+                        <label for="dayElectricity" class="mb-2">{{ rate.tariff_type }}</label>
+                        <input type="number" name="" id="dayElectricity" value="{{ rate.value }}" class="form-control" [disabled]="disabled">
                     </form>
                     <a 
                         class="btn btn-dark mt-3" 
