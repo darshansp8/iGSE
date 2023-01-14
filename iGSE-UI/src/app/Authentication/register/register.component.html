@@ -44,6 +44,11 @@
                             <span 
                                 *ngIf="!registerForm.get('customer_id').valid && registerForm.get('customer_id').touched"
                                 class="text-danger">Please provide a valid email.</span>
+                            <span
+                                *ngIf="usernameExists"
+                                class="text-danger">
+                                Email already exists
+                            </span>
                             <!-- <span 
                                 *ngIf="registerForm.get('customer_id').valid && registerForm.get('customer_id').touched"
                                 class="text-success">Looks good.</span> -->
@@ -144,6 +149,16 @@
                             <span 
                                 *ngIf="!registerForm.get('evcCode').valid && registerForm.get('evcCode').touched"
                                 class="text-danger">Please provide a valid EVC code.</span>
+                            <span
+                                *ngIf="voucherUsed"
+                                class="text-danger">
+                                Voucher is expired
+                            </span>
+                            <span
+                                *ngIf="voucherInvalid"
+                                class="text-danger">
+                                Invalid voucher!
+                            </span>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 d-flex align-self-center">

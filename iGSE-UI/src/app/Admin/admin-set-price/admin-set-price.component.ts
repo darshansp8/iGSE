@@ -49,7 +49,7 @@ export class AdminSetPriceComponent implements OnInit{
           this.tariff.forEach(element => {
             this.rateList.push(element)
           });
-          console.log(this.rateList)
+          // console.log(this.rateList)
         }
       )
   }

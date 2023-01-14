@@ -8,6 +8,7 @@ import { User } from './Users/user.model';
 export class AuthenticationService {
 
 
+  loginUrl = 'http://127.0.0.1:5000/auth/login'
   registerUrl = "http://127.0.0.1:5000/auth/signup"
   getTariffUrl = "http://127.0.0.1:5000/tariff"
   getMeterReadingUrl = "http://127.0.0.1:5000/readings"
@@ -18,11 +19,23 @@ export class AuthenticationService {
     return this.http.post<any>(this.registerUrl, user)
   }
 
+  login(user: User){
+    return this.http.post<any>(this.loginUrl, user)
+  }
+
   getTariff(){
     return this.http.get<any>(this.getTariffUrl)
   }
 
   getReadings(){
     return this.http.get<any>(this.getMeterReadingUrl)
+  }
+
+  getUsername(){
+    return localStorage.getItem('username')
+  }
+
+  getUserType(){
+    return localStorage.getItem('type')
   }
 }

@@ -15,6 +15,11 @@ export class RegisterComponent implements OnInit {
   faCamera = faCamera
   faWallet = faWallet
 
+  errorCode: number
+  usernameExists = false
+  voucherUsed = false
+  voucherInvalid = false
+
   registerForm: FormGroup;
 
   constructor(private authenticate: AuthenticationService,
@@ -39,6 +44,31 @@ export class RegisterComponent implements OnInit {
     this.authenticate.register(this.registerForm.value)
       .subscribe((responseData) => {
         console.log("Success", responseData);
+        if (responseData.data != ''){
+          localStorage.setItem('token', responseData.data.access_token)
+          localStorage.setItem('username', responseData.data.customerId)
+          localStorage.setItem('userType', responseData.data.type)
+          this.router.navigate(['/user'])
+        }
+        if (responseData.errorMsg != ''){
+          console.log(responseData.errorMessage.message)
+        }
+      },
+      (error)=> {
+        console.log('Error!', error.error.errorMessage.errorCode)
+        this.errorCode = error.error.errorMessage.errorCode
+        if(this.errorCode === 0){
+          this.usernameExists = true
+
+        }
+        if(this.errorCode === 1){
+          this.voucherUsed = true
+          this.voucherInvalid = false
+        }
+        if(this.errorCode === 2){
+          this.voucherInvalid = true
+          this.voucherUsed = false
+        }
       })
   }
 
