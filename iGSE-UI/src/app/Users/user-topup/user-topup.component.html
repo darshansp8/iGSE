@@ -4,7 +4,11 @@
             <div class="card p-4">
                 <!-- <p class="h4 mb-3">Current Balance: &#163;200</p> -->
                 <h4 class="mb-3 card-title">Credit Top-up</h4>
-                <form action="" class="row g-2">
+                <form 
+                    novalidate
+                    class="row g-2"
+                    [formGroup]="topupForm"
+                    (ngSubmit)="onSubmit()">
                     <div class="d-flex align-items-center">
                         <div class="col-6 me-2">
                             <div class="form-floating">
@@ -14,7 +18,8 @@
                                     name="EVC" 
                                     id="floatingEVC" 
                                     placeholder="EVC"
-                                    value="{{ (action.data.value)['data'] }}">
+                                    value="{{ (action.data.value)['data'] }}"
+                                    formControlName="evcCode">
                                 <label for="floatingEVC" class="text-dark">Enter a valid code</label>
                             </div>
                             <!-- <a href="" class="text-decoration-none text-light text-center">Scan a QR Code</a> -->
@@ -31,6 +36,7 @@
                     </div>
                     <div class="col-12">
                         <button 
+                            type="submit"
                             class="btn btn-dark text-light" 
                             (click)="action.stop()">
                             <fa-icon [icon]="faWallet" class="me-2"></fa-icon>Top-Up Wallet

@@ -9,13 +9,14 @@ import { MeterReading } from './Models/meter-reading.model';
 export class AuthenticationService {
 
 
-  loginUrl = 'http://127.0.0.1:5000/auth/login'
-  registerUrl = "http://127.0.0.1:5000/auth/signup"
+  loginUrl = 'http://localhost:5000/auth/login'
+  registerUrl = "http://localhost:5000/auth/signup"
   getTariffUrl = "http://localhost:5000/tariff/"
   getMeterReadingUrl = "http://localhost:5000/readings/"
   getMeterReadingByIdUrl = "http://localhost:5000/readings/getReadingById"
   addMeterReadingUrl = "http://localhost:5000/readings/"
-  userDetailsUrl = "http://127.0.0.1:5000/users/getUserById"
+  userDetailsUrl = "http://localhost:5000/users/getUserById"
+  updateBalanceUrl = "http://localhost:5000/users/updatebalance"
 
   constructor(private http: HttpClient) { }
 
@@ -46,6 +47,11 @@ export class AuthenticationService {
 
   getReadingById(){
     return this.http.get<any>(this.getMeterReadingByIdUrl)
+  }
+
+
+  updateUserBalance(currentBalance: number){
+    return this.http.put<any>(this.updateBalanceUrl, currentBalance)
   }
 
   getUsername(){
