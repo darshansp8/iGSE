@@ -3,35 +3,94 @@
         <div class="col-12 col-md-8 col-lg-5 ps-0">
             <div class="card p-5">
                 <h4 class="mb-3 card-title">Enter your meter reading</h4>
-                <form action="#" class="row g-2">
+                <form 
+                    novalidate 
+                    class="row g-2"
+                    [formGroup]="readingForm"
+                    (ngSubmit)="onSubmit()">
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="date" class="form-control" name="Submission Date" id="floatingDate" placeholder="dd/mm/yyyy">
+                            <input 
+                                type="date" 
+                                class="form-control" 
+                                name="Submission Date" 
+                                id="floatingDate" 
+                                placeholder="dd/mm/yyyy"
+                                formControlName="submissionDate">
                             <label for="floatingDate">Submission Date</label>
+                            <span
+                                *ngIf="!readingForm.get('submissionDate').valid 
+                                && readingForm.get('submissionDate').touched"
+                                class="text-danger">
+                                Please a enter a valid date.
+                            </span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-floating">
-                            <input type="number" class="form-control" min="0" name="Day Reading" id="floatingDayReading" placeholder="Electricity (Day)">
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                min="{{ this.previousMeterReading.elecReadingDay }}" 
+                                name="Day Reading" 
+                                id="floatingDayReading" 
+                                placeholder="Electricity (Day)"
+                                formControlName="elecReadingDay">
                             <label for="floatingDayReading">Electricity(Day)</label>
+                            <span
+                                *ngIf="!readingForm.get('elecReadingDay').valid 
+                                && readingForm.get('elecReadingDay').touched"
+                                class="text-danger">
+                                Please a enter a valid reading.
+                            </span>
+                            <!-- <span>
+                                Current meter reading and previous reeading cannot be same.
+                            </span> -->
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-floating">
-                            <input type="number" class="form-control" min="0" name="Day Reading" id="floatingNightReading" placeholder="Electricity (Night)">
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                min="{{ this.previousMeterReading.elecReadingNight }}" 
+                                name="Day Reading" 
+                                id="floatingNightReading" 
+                                placeholder="Electricity (Night)"
+                                formControlName="elecReadingNight">
                             <label for="floatingNightReading">Electricity(Night)</label>
+                            <span
+                                *ngIf="!readingForm.get('elecReadingNight').valid 
+                                && readingForm.get('elecReadingNight').touched"
+                                class="text-danger">
+                                Please a enter a valid reading.
+                            </span>
                         </div>
                     </div>
                     <div class="col-12 mb-2">
                         <div class="form-floating">
-                            <input type="number" class="form-control" min="0" name="Day Reading" id="floatingGasReading" placeholder="Gas Reading">
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                min="{{ this.previousMeterReading.gasReading }}" 
+                                name="Day Reading" 
+                                id="floatingGasReading" 
+                                placeholder="Gas Reading"
+                                formControlName="gasReading">
                             <label for="floatingGasReading">Gas Reading</label>
+                            <span
+                                *ngIf="!readingForm.get('gasReading').valid 
+                                && readingForm.get('gasReading').touched"
+                                class="text-danger">
+                                Please a enter a valid reading.
+                            </span>
                         </div>
                     </div>
                     <div class="col-12">
-                        <button 
+                        <button
+                        type="submit"
                         class="btn btn-dark col-12 col-md-6 col-lg-6"
-                        routerLink="/user">Submit Reading</button>
+                        [disabled]="!readingForm.valid">Submit Reading</button>
                     </div>
                 </form>
             </div>

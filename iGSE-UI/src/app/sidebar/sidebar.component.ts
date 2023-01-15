@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faChartArea, faFileInvoice, faGaugeSimpleMed, faHome, faPoundSign, faRemove, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,6 +10,10 @@ import { faChartArea, faFileInvoice, faGaugeSimpleMed, faHome, faPoundSign, faRe
 export class SidebarComponent {
   // faHome = faHome
   // faFileInvoice = faFileInvoice
+
+  customerId = {
+    'customerId':localStorage.getItem('username')
+  }
   usersidebarList = [
     {
       name: 'Dashboard',
@@ -65,11 +70,16 @@ export class SidebarComponent {
     }
   ]
 
-  role = 'admin';
-  constructor() {}
+  role: string
+  constructor(private authService: AuthenticationService) {}
 
   ngOnInit(){
-
+    console.log(this.customerId.customerId)
+    this.authService.getUserDetails()
+      .subscribe((responseData) => {
+        console.log(responseData)
+        responseData.type === 'user'? this.role = 'user': this.role = 'admin';
+      })
   }
 
 }
