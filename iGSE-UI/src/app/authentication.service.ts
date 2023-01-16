@@ -14,6 +14,7 @@ export class AuthenticationService {
   getTariffUrl = "http://localhost:5000/tariff/"
   getMeterReadingUrl = "http://localhost:5000/readings/"
   getMeterReadingByIdUrl = "http://localhost:5000/readings/getReadingById"
+  getAllMeterReadingByIdUrl = "http://localhost:5000/readings/getAllReadingById"
   addMeterReadingUrl = "http://localhost:5000/readings/"
   userDetailsUrl = "http://localhost:5000/users/getUserById"
   updateBalanceUrl = "http://localhost:5000/users/updatebalance"
@@ -47,6 +48,10 @@ export class AuthenticationService {
 
   getReadingById(){
     return this.http.get<any>(this.getMeterReadingByIdUrl)
+  }
+
+  getAllReadingById(){
+    return this.http.get<any>(this.getAllMeterReadingByIdUrl)
   }
 
 

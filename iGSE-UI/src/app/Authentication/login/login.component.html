@@ -27,7 +27,12 @@
                                 class="form-control" 
                                 placeholder="abc@xyz.com"
                                 formControlName="customer_id">
-                            <label for="floatingEmail">Username</label>
+                            <label for="floatingEmail">Email</label>
+                            <span
+                                *ngIf="!loginForm.get('customer_id').valid && loginForm.get('customer_id').touched"
+                                class="text-danger">
+                                Please provide a valid customer id
+                            </span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -40,6 +45,11 @@
                                 placeholder="********"
                                 formControlName="password">
                             <label for="floatingPassword">Password</label>
+                            <span
+                                *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"
+                                class="text-danger">
+                                Please provide a valid password
+                            </span>
                         </div>
                     </div>
                     <div class="col-12">
