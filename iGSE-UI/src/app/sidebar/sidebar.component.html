@@ -1,9 +1,14 @@
 <div class="row">
-    <a 
+    <div class="offcanvas-header">
+        <a 
         class="h4 text-light text-decoration-none mt-5 ps-4"
         routerLink="/">
         iGSE | <span class="lead">Energy</span>
-    </a>
+        </a>
+        <button type="button" class="btn mt-5 text-light" data-bs-dismiss="offcanvas" aria-label="Close"><fa-icon [icon]="faRemove"></fa-icon></button>
+    </div>
+    
+   
     <div *ngIf="role === 'user'">
         <ul 
             class="list-group list-group-flush mt-3" 
@@ -18,6 +23,15 @@
                     class="text-decoration-none text-light"
                     routerLink="{{ usersidebarItem.url }}">
                     <fa-icon [icon]="usersidebarItem.icon" class="pe-2"></fa-icon>{{usersidebarItem.name}}
+                </a>
+            </li>
+        </ul>
+        <ul class="list-group list-group-flush mt-3">
+            <li class="list-group-item background-dark custom-border">
+                <a 
+                    class="text-decoration-none text-light"
+                    (click)="authService.logoutUser()">
+                    <fa-icon [icon]="faRemove" class="pe-2"></fa-icon>Logout
                 </a>
             </li>
         </ul>
@@ -36,6 +50,15 @@
                     class="text-decoration-none text-light"
                     routerLink="{{ adminSideBarItem.url }}">
                     <fa-icon [icon]="adminSideBarItem.icon" class="pe-2"></fa-icon>{{adminSideBarItem.name}}
+                </a>
+            </li>
+        </ul>
+        <ul class="list-group list-group-flush mt-3">
+            <li class="list-group-item background-dark custom-border">
+                <a 
+                    class="text-decoration-none text-light"
+                    (click)="authService.logoutUser()">
+                    <fa-icon [icon]="faRemove" class="pe-2"></fa-icon>Logout
                 </a>
             </li>
         </ul>

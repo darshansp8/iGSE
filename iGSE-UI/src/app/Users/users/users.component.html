@@ -65,8 +65,7 @@
                 </div> -->
             </div>
             <div class="card-body d-flex align-self-center pt-0">
-                <a href="#" class="text-decoration-none text-light p-2">Pay Bill</a>
-                <a href="#" class="text-decoration-none text-light p-2">View Bill</a>
+                <a class="text-decoration-none text-light p-2" routerLink="/user/viewbill">View Readings</a>
             </div>
         </div>
     </div>
@@ -77,51 +76,7 @@
                 <p class="card-text text-center">Upload your current month meter reading from the below link.</p>
             </div>
             <div class="card-body d-flex align-self-center pt-0">
-                <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#submitReadingModal">Submit Reading</button>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="submitReadingModal" tabindex="-1" aria-labelledby="submitReadingModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="submitReadingModalLabel">Meter Reading</h5>
-                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="#" class="row g-2">
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="date" class="form-control" name="Submission Date" id="floatingDate" placeholder="dd/mm/yyyy">
-                                    <label for="floatingDate">Submission Date</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" name="Day Reading" id="floatingDayReading" placeholder="Electricity (Day)">
-                                    <label for="floatingDayReading">Electricity(Day)</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" name="Day Reading" id="floatingNightReading" placeholder="Electricity (Night)">
-                                    <label for="floatingNightReading">Electricity(Night)</label>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-2">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" name="Day Reading" id="floatingGasReading" placeholder="Gas Reading">
-                                    <label for="floatingGasReading">Gas Reading</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button 
-                                class="btn btn-dark col-12 col-md-6 col-lg-6"
-                                routerLink="/user">Submit Reading</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                <button type="button" class="btn text-light" routerLink="/user/meterreading">Submit Reading</button>
             </div>
         </div>
     </div>
@@ -132,67 +87,8 @@
                 <p class="card-text text-center">Upload your current month meter reading from the below link.</p>
             </div>
             <div class="card-body d-flex align-self-center pt-0">
-                <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#topUpModal">Top-Up</button>
-            </div>
-            <div class="modal fade" id="topUpModal" tabindex="-1" aria-labelledby="topUpModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="topUpModalLabel">Top-Up Wallet</h5>
-                            <button class="btn-close" data-bs-dismiss="modal" aria-label="close" (click)="action.stop()" (click)="toggleCamera()"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" class="row">
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input 
-                                            type="text" 
-                                            class="form-control" 
-                                            name="EVC" 
-                                            id="floatingEVC" 
-                                            placeholder="EVC"
-                                            value="{{ (action.data.value)['data'] }}">
-                                        <label for="floatingEVC" class="text-dark">EVC</label>
-                                    </div>
-                                    <!-- <a href="" class="text-decoration-none text-light text-center">Scan a QR Code</a> -->
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark text-light" (click)="action.stop()">Top-Up Wallet</button>
-                                </div>
-                                <p class="text-center mt-3 text-dark">OR</p>
-                                <div class="col-12">
-                                    <button 
-                                        type="button" 
-                                        class="btn btn-dark text-light align-self-center"
-                                        (click)="action.start()"
-                                        (click)="toggleCamera()">Scan a QR Code
-                                    </button>
-                                </div>
-                                <div class="col-12" [ngClass]="isShow? 'd-block': 'd-none'">
-                                    <button class="btn" (click)="action.stop()">
-                                        <fa-icon [icon]="faClose" class="text-dark text-end"></fa-icon> Close QR Scanner
-                                    </button> 
-                                    <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <button type="button" class="btn text-light" routerLink="/user/topup">Top-Up</button>
             </div>
         </div>
-        <!-- <div id="cameraModal" 
-            [ngClass]="isShow? 'd-block': 'd-none'"
-            tabindex="-1" aria-labelledby="topUpModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close" (click)="action.stop()"></button>
-                    </div>
-                    <div class="modal-body">
-                        <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { faCheck, faPen, faPenAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from 'src/app/authentication.service';
 import { Tariff } from './tariff.model';
@@ -12,6 +13,8 @@ export class AdminSetPriceComponent implements OnInit{
   faPen = faPen;
   faPenAlt = faPenAlt;
   faCheck = faCheck
+
+  editchargesForm: FormGroup
 
   rateList: Tariff[] = []
 
@@ -49,9 +52,11 @@ export class AdminSetPriceComponent implements OnInit{
           this.tariff.forEach(element => {
             this.rateList.push(element)
           });
-          // console.log(this.rateList)
+          console.log(this.rateList)
         }
       )
+
+
   }
 
   toggleInput(){

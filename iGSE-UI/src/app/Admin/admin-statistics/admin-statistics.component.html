@@ -1,1 +1,15 @@
-<p>admin-statistics works!</p>
+<div class="container">
+    <div class="row mt-5">
+        <ngx-charts-bar-vertical-stacked 
+            [results]="reading"
+            [view]="view"
+            [scheme]="colorScheme"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"></ngx-charts-bar-vertical-stacked>
+    </div>
+</div>

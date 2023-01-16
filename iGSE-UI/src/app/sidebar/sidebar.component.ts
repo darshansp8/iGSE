@@ -10,6 +10,7 @@ import { AuthenticationService } from '../authentication.service';
 export class SidebarComponent {
   // faHome = faHome
   // faFileInvoice = faFileInvoice
+  faRemove = faRemove
 
   customerId = {
     'customerId':localStorage.getItem('username')
@@ -35,11 +36,11 @@ export class SidebarComponent {
       icon: faWallet,
       url: '/user/topup'
     },
-    {
-      name: 'Logout',
-      icon: faRemove,
-      url: '/'
-    }
+    // {
+    //   name: 'Logout',
+    //   icon: faRemove,
+    //   url: '/'
+    // }
   ]
 
   adminSideBarList = [
@@ -63,11 +64,11 @@ export class SidebarComponent {
       icon: faChartArea,
       url: '/admin/statistics'
     },
-    {
-      name: 'Logout',
-      icon: faRemove,
-      url: '/'
-    }
+    // {
+    //   name: 'Logout',
+    //   icon: faRemove,
+    //   url: '/'
+    // }
   ]
 
   role: string

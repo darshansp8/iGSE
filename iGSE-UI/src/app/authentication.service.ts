@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './Users/user.model';
 import { MeterReading } from './Models/meter-reading.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthenticationService {
   userDetailsUrl = "http://localhost:5000/users/getUserById"
   updateBalanceUrl = "http://localhost:5000/users/updatebalance"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
   register(user: User){
     return this.http.post<any>(this.registerUrl, user)
@@ -69,5 +71,13 @@ export class AuthenticationService {
 
   getToken(){
     return localStorage.getItem('token')
+  }
+
+  logoutUser(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('username')
+    console.log("Token Deleted")
+    this.router.navigate(['/'])
+
   }
 }

@@ -1,14 +1,26 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2 min-vh-100 bg-dark d-none d-lg-block position-relative">
+        <!-- <div class="col-2 min-vh-100 bg-dark d-none d-lg-block position-relative">
             <app-sidebar></app-sidebar>
-        </div>
-        <div class="col-12 col-lg-10 min-vh-100 bg-custom-dark px-3 px-md-5 px-lg-5 py-5">
+        </div> -->
+        <app-sidebar
+                class="offcanvas offcanvas-start bg-dark" 
+                tabindex="-1" 
+                id="offcanvasExample" 
+                aria-labelledby="offcanvasExampleLabel">
+            </app-sidebar>
+        <div class="col-12 col-lg-12 min-vh-100 px-3 px-md-5 px-lg-5 py-5">
             <!-- <app-users></app-users> -->
-            <div class="col-6 bg-dark text-light p-4 custom-border">
+                <a class="btn h2" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <fa-icon [icon]="faHamburger"></fa-icon>
+                  </a>
+                  <a 
+                    class="h3 text-dark text-decoration-none mt-5"
+                    routerLink="/">
+                    iGSE | <span class="lead">Energy</span>
+                    </a>
                 <h1 class="">Welcome, {{ username | titlecase }}</h1>
-                <h6>Current balance &#163;100.00</h6>
-            </div>
+                <h6>Current balance &#163;{{ balance }}</h6>
             
             <router-outlet></router-outlet>
         </div>

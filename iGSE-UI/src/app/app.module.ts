@@ -23,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     NgxScannerQrcodeModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
   ],
   providers: [
     {
